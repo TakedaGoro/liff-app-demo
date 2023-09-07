@@ -1,0 +1,14 @@
+.logoutButton {
+  background-color: #FF6347; /* Tomato色 */
+  color: white; /* 文字色は白 */
+  padding: 10px 20px; /* 上下に10px、左右に20pxのパディング */
+  border: none; /* ボーダーなし */
+  border-radius: 5px; /* 角を丸く */
+  cursor: pointer; /* マウスカーソルをハンドに */
+  font-size: 16px; /* フォントサイズを16pxに */
+  transition: background-color 0.3s; /* 背景色の変化を0.3秒で */
+}
+
+.logoutButton:hover {
+  background-color: #FF4500; /* ホバー時は色を少し濃く */
+}
