@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import liff from "@line/liff";
+import Routes from "./router";
 import "./App.css";
 
 function App() {
@@ -22,20 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>create-liff-app</h1>
-      {message && <p>{message}</p>}
-      {error && (
-        <p>
-          <code>{error}</code>
-        </p>
-      )}
-      <a
-        href="https://developers.line.biz/ja/docs/liff/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        LIFF Documentation
-      </a>
+      <Routes /> {/* ルーティングを追加 */}
     </div>
   );
 }
