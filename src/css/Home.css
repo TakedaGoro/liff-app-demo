@@ -30,11 +30,66 @@
 }
 
 .SideMenu ul {
-  list-style-type: none; /* li要素の点を非表示にする */
   padding-left: 0; /* 左の余白を削除 */
 }
 
 .MainContent {
   grid-area: mainArea;
   padding: 10px;
+}
+
+/* Home.cssの追加部分 */
+
+/* カレンダーのサイズを大きくする */
+.react-calendar {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* カレンダーのアクティブな日付のスタイル */
+.react-calendar__tile--active {
+  background-color: #4CAF50; /* アクティブな日付の背景色 */
+  color: white; /* アクティブな日付の文字色 */
+}
+
+/* カレンダーの今日の日付のスタイル */
+.react-calendar__tile--now {
+  background-color: #f5f5f5; /* 今日の日付の背景色 */
+  color: #4CAF50; /* 今日の日付の文字色 */
+  border: 1px solid #4CAF50; /* 今日の日付のボーダー色 */
+}
+
+/* 時間選択のli要素の・を消す */
+ul {
+  list-style-type: none;
+}
+
+/* 時間選択のli要素のスタイル */
+ul li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  transition: background-color 0.3s;
+}
+
+ul li:hover {
+  background-color: #f5f5f5;
+}
+
+/* ... 他のスタイル */
+
+.backToCalendarButton {
+  background-color: #4CAF50; /* ボタンの背景色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディング */
+  border: none; /* ボーダーを削除 */
+  border-radius: 4px; /* 角を丸く */
+  cursor: pointer; /* ホバー時のカーソルをポインターに */
+  margin-top: 10px; /* 上部のマージン */
+  transition: background-color 0.3s; /* 背景色の変化を滑らかに */
+}
+
+.backToCalendarButton:hover {
+  background-color: #45a049; /* ホバー時の背景色 */
 }

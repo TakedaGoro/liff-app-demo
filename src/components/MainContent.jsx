@@ -1,46 +1,49 @@
 import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import '../css/Home.css';
+import TimeSelection from './TimeSelection';
+import ReservationForm from './ReservationForm';
+
 
 const MainContent = () => {
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [contact, setContact] = useState('');
-  const [message, setMessage] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // ここで通常はAPIを呼び出してデータベースに保存しますが、今回はデモなのでメッセージのみ表示します。
-    setMessage('予約が完了しました。ありがとうございます。');
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const handleTimeClick = (time) => {
+    setSelectedTime(time);
+  };
+
+  const handleGoBack = () => {
+    setSelectedTime(null);
+    setSelectedDate(null);
+  };
+
+  const resetSelectedTime = () => {
+    setSelectedTime(null);
   };
 
   return (
     <div className="MainContent">
       <h3>服薬指導の予約</h3>
-      <form onSubmit={handleSubmit}>
-        <label>
-          名前:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          希望日:
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          希望時間:
-          <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          連絡先:
-          <input type="text" value={contact} onChange={(e) => setContact(e.target.value)} required />
-        </label>
-        <br />
-        <button type="submit">予約する</button>
-      </form>
-      {message && <p>{message}</p>}
+      {!selectedDate && <Calendar onChange={handleDateChange} />}
+      {selectedDate && !selectedTime && (
+        <TimeSelection
+          selectedDate={selectedDate}
+          handleTimeClick={handleTimeClick}
+          handleGoBack={handleGoBack}
+        />
+      )}
+      {selectedTime && (
+          <ReservationForm onBackToTimeSelection={resetSelectedTime}
+          selectedDate={selectedDate}
+          selectedTime={selectedTime}
+          />
+      )}
     </div>
   );
 };
