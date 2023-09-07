@@ -1,0 +1,40 @@
+.homeContainer {
+  display: grid;
+  grid-template-columns: 0.5fr 3.5fr; /* サイドメニューの幅を狭くしました */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "headerArea headerArea"
+    "sideArea mainArea"
+    "footerArea footerArea";
+  height: 100vh;
+}
+
+.Header {
+  grid-area: headerArea;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.Footer {
+  grid-area: footerArea;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.SideMenu {
+  grid-area: sideArea;
+  background-color: #e0e0e0;
+  padding: 10px;
+}
+
+.SideMenu ul {
+  list-style-type: none; /* li要素の点を非表示にする */
+  padding-left: 0; /* 左の余白を削除 */
+}
+
+.MainContent {
+  grid-area: mainArea;
+  padding: 10px;
+}

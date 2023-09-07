@@ -1,6 +1,7 @@
 import React from 'react';
 import liff from '@line/liff';
 import { useNavigate } from 'react-router-dom';
+import '../css/Logout.css';
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -21,8 +22,7 @@ const Logout = () => {
 
   return (
     <div>
-      <h2>Logout from LINE</h2>
-      <button onClick={handleLogout}>Logout</button>
+      <button className="logoutButton" onClick={handleLogout}>ログアウト</button>
     </div>
   );
 };

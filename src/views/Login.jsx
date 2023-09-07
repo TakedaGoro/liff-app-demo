@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import liff from '@line/liff';
 import { useNavigate } from 'react-router-dom';
+import '../css/login.css'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,8 +30,7 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login with LINE</h2>
-      {!isLoggedIn && <button onClick={handleLogin}>Login with LINE Account</button>}
+      {!isLoggedIn && <button className="loginButton" onClick={handleLogin}>LINEアカウントでログイン</button>}
     </div>
   );
 };

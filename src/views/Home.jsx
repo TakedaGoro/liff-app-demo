@@ -1,12 +1,17 @@
 import React from 'react';
-import Logout from '../components/Logout'; // Logoutコンポーネントをインポート
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import SideMenu from '../components/SideMenu';
+import MainContent from '../components/MainContent';
+import '../css/Home.css';
 
 const Home = () => {
   return (
-    <div>
-      <h1>服薬指導アプリ</h1>
-      <p>こちらは服薬指導アプリのホームページです。</p>
-      <Logout />
+    <div className="homeContainer">
+      <Header />
+      <SideMenu />
+      <MainContent />
+      <Footer />
     </div>
   );
 };
